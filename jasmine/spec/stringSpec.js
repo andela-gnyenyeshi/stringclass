@@ -45,10 +45,7 @@ describe("Prototypal methods of the String class", function() {
       expect(two.toLower()).toBe("what? how? when?");
     });
   });
-
-  // // describe("Should convert first letter of the string to Upper Case", function() {
-  // //   it("Should return 'Bisquit' for 'bisquit' ", function() )
-  // // });
+  
   });
 // });
 
