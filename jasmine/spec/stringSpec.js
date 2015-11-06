@@ -1,10 +1,8 @@
 describe("Prototypal methods of the String class", function() {
-  
-  var three = "bisquit";
   describe("Should return true if string has vowels", function() {
     it("Should return true for 'Sheshe' ", function() {
       var one = "Sheshe";
-      expect(one.hasVowels()).toBe(true);  
+      expect(one.hasVowels()).toBe(true);
     });
     it("Should return true for 'my nAme' ", function() {
       var three = "my nAme";
@@ -37,20 +35,23 @@ describe("Prototypal methods of the String class", function() {
 
   describe("Should convert CHARACTERS to lower case", function() {
     it("Should return one 4 one for ONE 4 ONE", function() {
-      var one = "ONE 4 ONE"
+      var one = "ONE 4 ONE";
       expect(one.toLower()).toBe("one 4 one");
     });
     it("Should return what? how? when? for What? How? When?", function() {
-      var two = "What? How? When?"
+      var two = "What? How? When?";
       expect(two.toLower()).toBe("what? how? when?");
     });
   });
-  
+
+  describe("Should count the number of words in a string", function() {
+    it("Should return 5 for the d0j0", function() {
+      var one = "the d0j0";
+      expect(one.wordCount()).toBe(5);
+    });
+    it("Should return 6 for Am I 4 yrs?", function() {
+      var two = "Am I 4 yrs?";
+      expect(two.wordCount()).toBe(6);
+    });
   });
-// });
-
-
-
-
-
-
+});
