@@ -2,11 +2,11 @@ describe("Prototypal methods of the String class", function() {
   describe("Should return true if string has vowels", function() {
     it("Should return true for 'Sheshe' ", function() {
       var one = "Sheshe";
-      expect(one.hasVowels()).toBe(true);
+      expect(one.hasVowels()).toBeTruthy();
     });
     it("Should return true for 'my nAme' ", function() {
       var three = "my nAme";
-      expect(three.hasVowels()).toBe(true);
+      expect(three.hasVowels()).toBeTruthy();
     });
     it("Should return false for 'shy my' ", function() {
       var two = "shy my";
@@ -41,6 +41,28 @@ describe("Prototypal methods of the String class", function() {
     it("Should return what? how? when? for What? How? When?", function() {
       var two = "What? How? When?";
       expect(two.toLower()).toBe("what? how? when?");
+    });
+  });
+
+   describe("Should return the first character of the string in upper case", function() {
+    it("Should return fave for Fave", function() {
+      var one = "fave";
+      expect(one.ucFirst()).toBe("Fave");
+    });
+    it("Should return Trim3 for trim3", function() {
+      var two = "trim3";
+      expect(two.ucFirst()).toBe("Trim3");
+    });
+  });
+
+  describe("Should return true/false for whether a string is a question", function() {
+    it("Should return true for To be or not to be?", function() {
+      var one = "To be or not to be?";
+      expect(one.isQuestion()).toBeTruthy();
+    });
+    it("Should return false for Merchant of Venice", function () {
+      var two = "Merchant of Venice";
+      expect(two.isQuestion()).toBeFalsy();
     });
   });
 
