@@ -1,57 +1,101 @@
-describe("Prototypal methods of the String class", function() {
-  describe("Should return true if string has vowels", function() {
-    it("Should return true for 'Sheshe' ", function() {
-      var one = "Sheshe";
+describe('Prototypal methods of the String class', function() {
+  describe('Should return true if string has vowels', function() {
+    it('Should return true for Sheshe', function() {
+      var one = 'Sheshe';
       expect(one.hasVowels()).toBeTruthy();
     });
-    it("Should return true for 'my nAme' ", function() {
-      var three = "my nAme";
+    it('Should return true for my nAme', function() {
+      var three = 'my nAme';
       expect(three.hasVowels()).toBeTruthy();
     });
-    it("Should return false for 'shy my' ", function() {
-      var two = "shy my";
-      expect(two.hasVowels()).toBe(false);
+    it('Should return false for shy my', function() {
+      var two = 'shy my';
+      expect(two.hasVowels()).toBeFalsy();
     });
-    it("Should return false for 'zzz' ", function() {
-      var four = "zzz";
-      expect(four.hasVowels()).toBe(false);
+    it('Should return false for zzz', function() {
+      var four = 'zzz';
+      expect(four.hasVowels()).toBeFalsy();
     });
-  });
-
-  describe("Should convert characters to UPPER CASE", function() {
-    it("Should return SHESHE for Sheshe", function() {
-      var one = "sheshe";
-      expect(one.toUpper()).toBe("SHESHE");
+    it('Should return false for 9090', function() {
+      var one = '9090';
+      expect(one.hasVowels()).toBeFalsy();
     });
-    it("Should return SHSH for Shsh", function() {
-      var two = "shsh"
-      expect(two.toUpper()).toBe("SHSH");
-    });
-    it("Should return GERTIE 234 SHESHE for gertie 234 sheshe", function() {
-      var two = "gertie 234 sheshe"
-      expect(two.toUpper()).toBe("GERTIE 234 SHESHE");
+    it('Should return false for an empty string', function() {
+      var one = ' ';
+      expect(one.hasVowels()).toBeFalsy();
     });
   });
 
-  describe("Should convert CHARACTERS to lower case", function() {
-    it("Should return one 4 one for ONE 4 ONE", function() {
-      var one = "ONE 4 ONE";
-      expect(one.toLower()).toBe("one 4 one");
+  describe('Should convert characters to UPPER CASE', function() {
+    it('Should return SHESHE for Sheshe', function() {
+      var one = 'sheshe';
+      expect(one.toUpper()).toBe('SHESHE');
     });
-    it("Should return what? how? when? for What? How? When?", function() {
-      var two = "What? How? When?";
-      expect(two.toLower()).toBe("what? how? when?");
+    it('Should return SHSH for Shsh', function() {
+      var two = 'shsh';
+      expect(two.toUpper()).toBe('SHSH');
+    });
+    it('Should return GERTIE 234 SHESHE for gertie 234 sheshe', function() {
+      var two = 'gertie 234 sheshe';
+      expect(two.toUpper()).toBe('GERTIE 234 SHESHE');
+    });
+    it('Should return 1234? for 1234?', function() {
+      var one = '1234?';
+      expect(one.toUpper()).toBe('1234?');
+    });
+    it('Should return empty string for empty string', function() {
+      var one = ' ';
+      expect(one.toUpper()).toBe(' ');
     });
   });
 
-   describe("Should return the first character of the string in upper case", function() {
-    it("Should return fave for Fave", function() {
-      var one = "fave";
-      expect(one.ucFirst()).toBe("Fave");
+  describe('Should convert CHARACTERS to lower case', function() {
+    it('Should return one 4 one for ONE 4 ONE', function() {
+      var one = 'ONE 4 ONE';
+      expect(one.toLower()).toBe('one 4 one');
     });
-    it("Should return Trim3 for trim3", function() {
-      var two = "trim3";
-      expect(two.ucFirst()).toBe("Trim3");
+    it('Should return 123four for 123Four', function() {
+      var one = '123Four';
+      expect(one.toLower()).toBe('123four');
+    });
+    it('Should return what? how? when? for What? How? When?', function() {
+      var two = 'What? How? When?';
+      expect(two.toLower()).toBe('what? how? when?');
+    });
+    it('Should return empty string for empty string', function() {
+      var one = ' ';
+      expect(one.toLower()).toBe(' ');
+    });
+    it('Should return 1234? for 1234?', function() {
+      var one = '1234?';
+      expect(one.toLower()).toBe('1234?');
+    });
+  });
+
+   describe('Should return the first character of the string in upper case', function() {
+    it('Should return fave for Fave', function() {
+      var one = 'fave';
+      expect(one.ucFirst()).toBe('Fave');
+    });
+    it('Should return Trim3 for trim3', function() {
+      var two = 'trim3';
+      expect(two.ucFirst()).toBe('Trim3');
+    });
+    it('Should return Biscuit for Biscuit', function() {
+      var one = 'Biscuit';
+      expect(one.ucFirst()).toBe('Biscuit');
+    });
+    it('Should return 7ello hello for 7ello hello', function() {
+      var one = '7ello hello';
+      expect(one.ucFirst()).toBe('7ello hello')
+    });
+    it('Should return _Andela for _Andela', function() {
+      var one = '_Andela';
+      expect(one.ucFirst()).toBe('_Andela');
+    });
+    it('Should ignore an empty space at the front', function() {
+      var one = ' this is Andela';
+      expect(one.ucFirst()).toBe('This is Andela');
     });
   });
 
