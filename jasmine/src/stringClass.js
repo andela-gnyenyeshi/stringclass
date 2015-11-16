@@ -1,6 +1,6 @@
-//Prototype methods to the String object to manipulate strings.
-//Author: Gertrude Nyenyeshi.
-//Purpose: Andela JavaScript Checkpoint - 2.
+// Prototype methods to the String object to manipulate strings.
+// Author: Gertrude Nyenyeshi.
+// Purpose: Andela JavaScript Checkpoint - 2.
 (function() {
   'use-strict';
   // Method to check if the instance of the String object has a vowel.
