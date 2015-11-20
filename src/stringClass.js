@@ -2,11 +2,11 @@
 // Author: Gertrude Nyenyeshi.
 // Purpose: Andela JavaScript Checkpoint - 2.
 (function() {
-  'use-strict';
+  'use strict';
   // Method to check if the instance of the String object has a vowel.
   String.prototype.hasVowels = function() {
     // The RegEx test method returns true/false for the String instance
-    return /[aeiou]/g.test(this);
+    return /[aeiou]/gi.test(this);
   };
 
   // Method to convert the String instance to Upper case.
@@ -32,15 +32,14 @@
     // Removes whitespaces at the beginning and end of string.
     var trimmed = this.trim();
     // Gets the first character of the String instance.
-    var first = trimmed.charAt(0);
-    var empty = '';
-    // Uses toUpper() method to convert to upper case and pushes to new empty string.
-    empty += first.toUpper();
-    for (var i = 1; i < trimmed.length; i++) {
-      // Loops and pushes the rest to the new string.
-      empty += trimmed[i];
+    if (!(/[A-Z]/.test(trimmed))) {
+      return this.replace(/[a-z]/, function(val) {
+        // Callback function for that character. Converts and returns character in upper case.
+        return String.fromCharCode(val.charCodeAt() - 32);
+      });
+    } else {
+      return trimmed;
     }
-    return empty;
   };
 
   // Method to check whether the String instance is a question.
@@ -73,7 +72,7 @@
     // Change to number and set the decimal points to two.
     var temp = (Number(this.replace(/[^0-9\.]/g, ''))).toFixed(2);
     // RegExp to add commas after every three digits.
-    return temp.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+    return temp.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
   };
 
   // Method to convert from string currency to a number representation.
