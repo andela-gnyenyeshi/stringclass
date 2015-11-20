@@ -55,7 +55,7 @@
     for (var i = 0; i < arr.length; i++) {
       // Replace anything that is not a letter with an empty space.
       var temp = arr[i].replace(/[^A-Za-z]/g, '');
-      if (temp !== '') {
+      if (temp) {
         empty.push(temp);
       }
     }
